@@ -73,15 +73,25 @@ fun main(args: Array<String>) {
 
     //動動腦
     //有一1~10亂數 ans , 給使用者來猜,猜對BINGO, 有五次機會
+    //加入請猜小一點/大一點的提示
     val ans = r.nextInt(10) + 1 //10的話是0-9  所以要+1
     val max = 5
     for (i in 1..max) {
         print("第 $i/$max 次 :請輸入數字")
         //val  guess = Scanner(System.`in`)
         val guess = readLine()!!.toInt()
-        if (guess == ans){
+//        if (guess < ans) {       //為什麼放中間不能用
+//            println("猜大一點")
+//            if (guess > ans)
+//                println("猜小一點")
+//        }
+        if (guess == ans) {
             println("Bingo")
             break
+        }else if(guess>ans){
+            println("請猜小一點")
+        }else{
+            println("請猜大一點")
         }
     }
 
