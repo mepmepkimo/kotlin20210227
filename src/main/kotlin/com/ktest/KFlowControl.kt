@@ -55,18 +55,19 @@ fun main(args: Array<String>) {
 
 
     //for
-    for (i in 1..10 step 2) {  //跨距2 : 1 3 5 7
+    for (i in 1..10 step 2) {   //step 為跨距2 : 1 3 5 7
+                                // .. 為  X 到 Y
         print("$i")
     }
     println()
 
-    for (i in 10 downTo 1) {
+    for (i in 10 downTo 1) {   //downTo 為倒數
         print("$i")
     }
     println()
 
 
-    for (i in 1 until 10) {
+    for (i in 1 until 10) {     //由 1 數到 9
         print("$i")
     }
     println()

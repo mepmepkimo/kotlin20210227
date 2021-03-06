@@ -7,9 +7,7 @@ fun getPrice(): Int {
 class KVars {
 }
 
-fun main() {
 
-}
 
 
 fun main(args: Array<String>) {
