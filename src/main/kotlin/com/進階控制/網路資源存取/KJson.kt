@@ -26,7 +26,6 @@ fun distance(long1: Double, lat1: Double, long2: Double, lat2: Double): Double {
     return d
 }
 
-
 fun main() {
     val url = URL(jsonPath)
     val jsonText = url.readText()
@@ -41,8 +40,19 @@ fun main() {
             println("${jo.get("parkName")} ${jo.get("surplusSpace")} / ${jo.get("totalSpace")}")
         }
     }
+    println("---------------------------------------------------------")
     // 巨匠桃認 24.990056759076385, 121.3120108551101
     // 請求出最近 1 公里內的停車場停車資訊
-
+    val endLat = 24.990056759076385
+    val endLng = 121.3120108551101
+    for (jo in records) {
+        jo as JSONObject
+        val lat = jo.getDouble("wgsY")
+        val lng = jo.getDouble("wgsX")
+        val d = distance(lng, lat, endLng, endLat)
+        if (d < 1000) {
+            println("${jo.get("parkName")} ${jo.get("surplusSpace")} / ${jo.get("totalSpace")} $d m")
+        }
+    }
 
 }
