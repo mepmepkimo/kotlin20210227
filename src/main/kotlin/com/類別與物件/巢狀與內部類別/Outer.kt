@@ -10,7 +10,7 @@ package com.類別與物件.巢狀與內部類別
 * */
 
 
-class Outer2 { // 一般/外部類別
+class Outer { // 一般/外部類別
     companion object { // 類別成員宣告區(相當於 Java 的 static { ... } )
         val sx = 200 // 類別成員變數
     }
@@ -27,7 +27,7 @@ class Outer2 { // 一般/外部類別
     inner class B { // 內部類別
         fun print() {
             println("B ${this}")
-            println("B -> Outer'x ${this@Outer2.x}")
+            println("B -> Outer'x ${this@Outer.x}")
             println("B -> Outer.sx ${Outer.sx}")
         }
     }
